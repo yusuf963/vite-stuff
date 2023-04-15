@@ -25,7 +25,9 @@ import TrainLineAnnoucer from "./components/TrainAnnoucement";
 import MatchControl from "./components/MatchControl";
 import MatchDisplay from "./components/MatchDisplay";
 import Country from "./components/Country";
+import Product from "./components/Product";
 import "./App.css";
+import ShopingCart from "./components/ShopingCart";
 
 const Nav = React.lazy(() => import("./components/Nav"));
 
@@ -36,6 +38,7 @@ function App() {
     <div className="App">
       <Provider store={store}>
         <PersistGate persistor={persistor}>
+          <ShopingCart />
           <MatchControl />
           <MatchDisplay />
           <Form />
@@ -74,6 +77,7 @@ function App() {
           <TrainLine />
           <Footer />
           <Country />
+          <Product />
         </PersistGate>
       </Provider>
     </div>

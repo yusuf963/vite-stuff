@@ -11,7 +11,9 @@ export const addtoCartAction = (payload) => {
   return { type: CART_ACTIONS.ADD_TO_CART, payload };
 };
 
-export const removeFromCArtAction = (payload) => {
+export const removeFromCartAction = (payload) => {
+  console.log("removeFromCartAction", payload);
+  
   return { type: CART_ACTIONS.REMOVE_FROM_CART, payload };
 };
 

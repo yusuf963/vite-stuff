@@ -1,6 +1,6 @@
 export const CART_INITIAL_STATE = {
   isCartOpen: false,
-  cartItems: ["hat"],
+  cartItems: [],
   cartTotal: 1,
   cartCount: 0,
 };
