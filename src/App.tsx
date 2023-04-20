@@ -1,16 +1,8 @@
 import React, { Suspense, useState } from "react";
 import { PersistGate } from "redux-persist/integration/react";
 import { Provider } from "react-redux";
-import {
-  // articlesStore,
-  // couresesStore,
-  // viedosStore,
-  // trainsStore,
-  // matchStore,
-  // cartStore,
-  store,
-  persistor,
-} from "./store/rootReducer";
+import { store, persistor } from "./store/rootReducer";
+import { useLocalStorage } from "./hooks/useLocalStorage";
 
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
@@ -28,16 +20,21 @@ import Country from "./components/Country";
 import Product from "./components/Product";
 import "./App.css";
 import ShopingCart from "./components/ShopingCart";
+import Section from "./layouts/Section";
 
 const Nav = React.lazy(() => import("./components/Nav"));
 
 function App() {
   const [count, setCount] = useState(0);
 
+  const someChildrent = <h3>hello I am a children prop</h3>;
+  const data = useLocalStorage("persist:root");
+
   return (
     <div className="App">
       <Provider store={store}>
         <PersistGate persistor={persistor}>
+          <Section children={someChildrent} name={"some name "}></Section>
           <ShopingCart />
           <MatchControl />
           <MatchDisplay />

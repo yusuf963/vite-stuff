@@ -1,47 +1,84 @@
 import { connect } from "react-redux";
-import { removeFromCartAction } from "../store/cart/action";
-const ShopingCart = ({ cart, remove }) => {
-  const caculateTotal = () => {
-    let total = 0;
-    cart.forEach((item) => {
-      total += item.price;
-    });
-    return total;
-  };
-  const total = <h4>Total {caculateTotal()} </h4>;
+import { store } from "../store/rootReducer";
+import {
+  removeFromCartAction,
+  increaseCartItemAction,
+  decreaseCartItemAction,
+} from "../store/cart/action";
 
-  const handleRemove = (id) => {
-    console.log("id", id);
-    // const newCart = cart.filter((item) => item.id !== id);
+type Item = {
+  id: number;
+  name: string;
+  price: number;
+  quantity: number;
+};
+console.log("store", store.getState().trainsStore);
+
+const ShopingCart = ({ cart, remove, increaseCartItem, decreaseCartItem }) => {
+  console.log("cart", cart);
+
+  let itemQuantity = 0;
+  let itemTotal = 0;
+  cart.forEach((item: Item) => {
+    itemQuantity++;
+    itemTotal += item.price * item.quantity;
+    console.log("itemTotal", itemTotal);
+  });
+  let total = 0;
+  cart.forEach((item: Item) => {
+    total += item.price;
+  });
+  const totalPrice = <h4>Total {itemTotal} </h4>;
+
+  const handleRemove = (id: number) => {
     remove(id);
+  };
+  const handleAddOneMore = (itemId: number) => {
+    increaseCartItem(itemId);
+    console.log("add one more");
+  };
+
+  const handleDecreaseItemQuantity = (itemId: number) => {
+    decreaseCartItem(itemId);
+    console.log("decrease");
   };
 
   return (
     <div>
       <h1>Shoping Cart</h1>
-      {cart.map((item) => (
+      {cart.map((item: Item) => (
         <div key={item.id}>
           <span>{item.name}</span> <span>£{item.price}</span>
+          <span>Quantity{item.quantity}</span>
           <span>
+            <button onClick={() => handleAddOneMore(item.id)}>
+              Increase quantity
+            </button>
+            <button onClick={() => handleDecreaseItemQuantity(item.id)}>
+              decrease quantity
+            </button>
             <button onClick={() => handleRemove(item.id)}>Remove</button>
           </span>
         </div>
       ))}
-      {total}
+      {totalPrice}
     </div>
   );
 };
 
 const mapStateToProp = (state) => {
-  console.log(" all state", state);
-
   return {
     cart: state.cartStore.cartItems,
   };
 };
-const mapDispatchToProps = (dispatch) => {
+
+const mapDispatchToProps = (
+  dispatch: (arg0: { type: string; payload: any }) => any
+) => {
   return {
-    remove: (id) => dispatch(removeFromCartAction(id)),
+    remove: (id: number) => dispatch(removeFromCartAction(id)),
+    increaseCartItem: (id: number) => dispatch(increaseCartItemAction(id)),
+    decreaseCartItem: (id: number) => dispatch(decreaseCartItemAction(id)),
   };
 };
 

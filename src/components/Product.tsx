@@ -3,23 +3,27 @@ import { addtoCartAction } from "../store/cart/action";
 const data = [
   {
     id: 1,
-    name: "product 1",
+    name: "Bike",
     price: 100,
+    quantity: 1,
   },
   {
     id: 2,
-    name: "product 2",
+    name: "Laptop",
     price: 200,
+    quantity: 1,
   },
   {
     id: 3,
-    name: "product 3",
+    name: "TV",
     price: 300,
+    quantity: 1,
   },
   {
     id: 4,
-    name: "product 4",
+    name: "Mobile",
     price: 400,
+    quantity: 1,
   },
 ];
 const Product = ({ add }) => {

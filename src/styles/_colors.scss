@@ -1,0 +1,50 @@
+$font-stack: Arial, Helvetica, sans-serif;
+
+$primary: #f00;
+$secondary: #0f0;
+$tertiary: #00f;
+$primary-light: #f99;
+$secondary-light: #9f9;
+$tertiary-light: #99f;
+
+$paddings-small: 5px;
+$paddings-medium: 15px;
+$paddings-large: 30px;
+
+$margin-small: 5px;
+$margin-medium: 15px;
+$margin-large: 30px;
+
+$border-radius-small: 5px;
+$border-radius-medium: 15px;
+$border-radius-large: 30px;
+
+$font-size-small: 12px;
+$font-size-medium: 16px;
+$font-size-large: 20px;
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+$font-color-light: #fff;
+$font-color-dark: #333;
+
+$background-color-light: #fff;
+$background-color-dark: #333;
+
+$border-color-light: #fff;
+$border-color-dark: #333;
+
+$box-shadow-light: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+$box-shadow-dark: 0 0 5px 0 rgba(255, 255, 255, 0.2);
+
+$transition-duration: 0.2s;
+
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+$breakpoint-mobile-max: $breakpoint-mobile - 1px;
+$breakpoint-tablet-max: $breakpoint-tablet - 1px;
+$breakpoint-desktop-max: $breakpoint-desktop - 1px;

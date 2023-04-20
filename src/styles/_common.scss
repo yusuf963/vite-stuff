@@ -1,0 +1,13 @@
+@import "colors";
+
+%btn {
+  display: inline-block;
+  border-radius: 5px;
+  padding: 8px 16px;
+  margin: 0 8px;
+  font-family: $font-stack;
+
+  &:hover {
+    transform: scale(0.98);
+  }
+}
