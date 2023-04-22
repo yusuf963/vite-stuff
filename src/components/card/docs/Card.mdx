@@ -1,0 +1,57 @@
+# Button
+
+## Owner: Shared
+
+## What problem does it solve?
+
+Gives the user the ability to complete an action or navigate between internal/external pages.
+
+## When & how to use it?
+
+See variant for specific use case.
+
+## Current usage
+
+- Homepage
+- Search
+- Product page
+- Checkout
+- My account
+
+## Related components
+
+- Link
+- Dropdown
+- Search
+- Pagination
+
+## Props
+
+| Prop Name       | Required | Type      | Description                                                                                                                                    |
+| --------------- | -------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| children        | false    | node      | Children are displayed inside the button                                                                                                       |
+| href            | false    | string    | The href of the button. Passing a value will cause the button to be rendered using a <a/> tag                                                  |
+| openInNewWindow | false    | boolean   | When true, causes the link (if href is provided) to open in a new window/tab                                                                   |
+| action          | false    | string    | An action for the button. Passing a value will cause the button to be rendered using a <button/> tag                                           |
+| ariaLabel       | false    | string    | A value for the aria label to be used by screen readers                                                                                        |
+| className       | false    | array     | A list of classes to append to the root element                                                                                                |
+| fontSize        | false    | string    | A custom font size to be used for the button text (bullfinch, skylark, etc)                                                                    |
+| align           | false    | string    | Align property. Can be either left or empty                                                                                                    |
+| icon            | false    | component | An Icon element to display inside the button                                                                                                   |
+| largeIcon       | false    | boolean   | When passed in as true the icon is rendered as 32x32px instead of 16x16px                                                                      |
+| iconPosition    | false    | string    | Position of the icon ("left" or "right") if one is provided (defaults to the left)                                                             |
+| type            | false    | string    | A type attribute that is added to the <a/> or <button /> tag                                                                                   |
+| data            | false    | object    | A list of data-attributes to be attached to the element                                                                                        |
+| onClick         | false    | function  | A function to be called when the button is clicked                                                                                             |
+| primary         | false    | boolean   | A flag to set the button as a primary one. Will cause some icons to change colour                                                              |
+| active          | false    | boolean   | If the button should be shown as active                                                                                                        |
+| numeral         | false    | boolean   | If the button should be styled as numeral                                                                                                      |
+| background      | false    | boolean   | A flag to turn the background colour off                                                                                                       |
+| setRef          | false    | function  | A prop to be forwarded to the child\'s ref prop                                                                                                |
+| style           | false    | object    | A custom style to be applied                                                                                                                   |
+| routerLink      | false    | component | Link component from react-router-dom. Pass this in if href is handled by current web app\'s instance of react-router                           |
+| selected        | false    | boolean   | Shows a pink underline below the button. Adds more spacing on each side so if a button is selectable but not selected, pass false as the value |
+| fullWidth       | false    | boolean   | Whether to make the button take up the full width of the container                                                                             |
+| tall            | false    | boolean   | Whether to make the button taller (using additional padding)                                                                                   |
+| disabled        | false    | boolean   | When true gives the button a disabled apparence                                                                                                |
+| bold            | false    | boolean   | Adds the bold typography class when set to true. Defaults to true                                                                              |

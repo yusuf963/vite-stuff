@@ -1,0 +1,44 @@
+# Car Card
+
+## Owner: Single Platform
+
+## What problem does it solve?
+
+Gives the user the ability to complete an action or navigate between internal/external pages.
+
+## When & how to use it?
+
+See variant for specific use case.
+
+## Current usage
+
+- Homepage
+- Search
+- Product page
+- Checkout
+- My account
+
+## Related components
+
+- Link
+- Dropdown
+- Search
+- Pagination
+
+## Props
+
+| Prop Name       | Required | Type      | Description                                                                                          |
+| --------------- | -------- | --------- | ---------------------------------------------------------------------------------------------------- |
+| children        | false    | node      | Children are displayed inside the button                                                             |
+| href            | false    | string    | The href of the button. Passing a value will cause the button to be rendered using a <a/> tag        |
+| openInNewWindow | false    | boolean   | When true, causes the link (if href is provided) to open in a new window/tab                         |
+| action          | false    | string    | An action for the button. Passing a value will cause the button to be rendered using a <button/> tag |
+| ariaLabel       | false    | string    | A value for the aria label to be used by screen readers                                              |
+| className       | false    | array     | A list of classes to append to the root element                                                      |
+| fontSize        | false    | string    | A custom font size to be used for the button text (bullfinch, skylark, etc)                          |
+| align           | false    | string    | Align property. Can be either left or empty                                                          |
+| icon            | false    | component | An Icon element to display inside the button                                                         |
+| largeIcon       | false    | boolean   | When passed in as true the icon is rendered as 32x32px instead of 16x16px                            |
+| iconPosition    | false    | string    | Position of the icon ("left" or "right") if one is provided (defaults to the left)                   |
+| type            | false    | string    | A type attribute that is added to the <a/> or <button /> tag                                         |
+| data            | false    | object    | A list of data-attributes to be attached to the element                                              |
