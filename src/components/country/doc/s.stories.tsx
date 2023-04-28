@@ -1,16 +1,26 @@
+import { withDesign } from "storybook-addon-designs";
 import continueWatchingButtonReadMe from "./Introduction.mdx";
 export function AdminButton() {
   return (
     <div className="gel-wrap" style={{ paddingTop: 15 }}>
-      <div>hi</div>
+      <div>
+        <button>Click me</button>
+      </div>
     </div>
   );
 }
 
 AdminButton.story = {
-  parameters: { notes: { markdown: continueWatchingButtonReadMe } },
+  parameters: {
+    notes: { markdown: continueWatchingButtonReadMe },
+    design: {
+      type: "figma",
+      url: "https://www.figma",
+    },
+  },
 };
 
 export default {
-  title: "Components/ContainedButton",
+  title: "Components/Modal",
+  decorators: [withDesign],
 };
