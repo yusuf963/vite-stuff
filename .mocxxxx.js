@@ -1,6 +1,4 @@
 'use strict';
-// this is a commit
-// this another commit 
 
 module.exports = {
   recursive: true,
