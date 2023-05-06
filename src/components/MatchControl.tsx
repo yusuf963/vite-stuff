@@ -103,7 +103,7 @@ const MatchControl = ({
 
 const mapStateToProps = (state) => {
   return {
-    match: state.matchStore,
+    match: state.match,
   };
 };
 

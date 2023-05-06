@@ -17,8 +17,8 @@ import { cartReducer } from "./cart/reducer";
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["countryStore", "cartStore"],
-  blacklist: ["articlesStore"],
+  whitelist: ["country", "cart"],
+  blacklist: ["articles"],
 };
 
 const middlewares = [
@@ -38,13 +38,13 @@ export const composeEnhancers = customeCompose(applyMiddleware(...middlewares));
 
 // combine all reducers into root reducer instead of creating multiple store and export the as above
 export const rootReducer = combineReducers({
-  articlesStore: articlesReducer,
-  couresesStore: courseReducer,
-  videosStore: videoReducer,
-  trainsStore: trainReducer,
-  matchStore: matchReducer,
-  cartStore: cartReducer,
-  countryStore: countryReducer,
+  articles: articlesReducer,
+  country: countryReducer,
+  coureses: courseReducer,
+  videos: videoReducer,
+  trains: trainReducer,
+  match: matchReducer,
+  cart: cartReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -58,13 +58,3 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = createStore(persistedReducer, undefined, composeEnhancers);
 export const persistor = persistStore(store);
-export const articlesStore = createStore(
-  articlesReducer,
-  undefined,
-  composeEnhancers
-);
-export const couresesStore = createStore(courseReducer);
-export const viedosStore = createStore(videoReducer);
-export const trainsStore = createStore(trainReducer);
-export const matchStore = createStore(matchReducer);
-export const cartStore = createStore(cartReducer);

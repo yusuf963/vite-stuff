@@ -1,5 +1,3 @@
-// ...props
-//<section {...props}>
 const Section = ({ children, ...props }) => {
   return (
     <section {...props}>

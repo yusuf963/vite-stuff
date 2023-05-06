@@ -7,7 +7,7 @@ type VideoType = {
 };
 
 const Video = ({ state }) => {
-  // const { count, videos } = state;
+  const { count, videos } = state;
   return (
     <div>
       <h1>Video</h1>
@@ -28,7 +28,7 @@ const Video = ({ state }) => {
 };
 
 const mapStateToProps = (state) => {
-  return { state: state.videosStore };
+  return { state: state.videos };
 };
 
 export default connect(mapStateToProps)(Video);

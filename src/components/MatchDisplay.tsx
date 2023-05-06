@@ -28,7 +28,7 @@ const MatchDisplay = ({ match }) => {
 
 const mapStateToProps = (state) => {
   return {
-    match: state.matchStore,
+    match: state.match,
   };
 };
 

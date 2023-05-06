@@ -18,7 +18,7 @@ import MatchControl from "./components/MatchControl";
 import MatchDisplay from "./components/MatchDisplay";
 import Country from "./components/Country";
 import Product from "./components/Product";
-import "./App.css";
+import "./styles/App.css";
 import ShopingCart from "./components/ShopingCart";
 import Section from "./layouts/Section";
 

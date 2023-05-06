@@ -1,5 +1,4 @@
 import { connect } from "react-redux";
-import { store } from "../store/rootReducer";
 import {
   removeFromCartAction,
   increaseCartItemAction,
@@ -12,17 +11,13 @@ type Item = {
   price: number;
   quantity: number;
 };
-console.log("store", store.getState().trainsStore);
 
 const ShopingCart = ({ cart, remove, increaseCartItem, decreaseCartItem }) => {
-  console.log("cart", cart);
-
   let itemQuantity = 0;
   let itemTotal = 0;
   cart.forEach((item: Item) => {
     itemQuantity++;
     itemTotal += item.price * item.quantity;
-    console.log("itemTotal", itemTotal);
   });
   let total = 0;
   cart.forEach((item: Item) => {
@@ -35,12 +30,10 @@ const ShopingCart = ({ cart, remove, increaseCartItem, decreaseCartItem }) => {
   };
   const handleAddOneMore = (itemId: number) => {
     increaseCartItem(itemId);
-    console.log("add one more");
   };
 
   const handleDecreaseItemQuantity = (itemId: number) => {
     decreaseCartItem(itemId);
-    console.log("decrease");
   };
 
   return (
@@ -68,7 +61,7 @@ const ShopingCart = ({ cart, remove, increaseCartItem, decreaseCartItem }) => {
 
 const mapStateToProp = (state) => {
   return {
-    cart: state.cartStore.cartItems,
+    cart: state.cart.cartItems,
   };
 };
 

@@ -3,7 +3,7 @@ import { connect, useSelector } from "react-redux";
 // you can also useSelector hook to get the state from redux store
 // instead of using mapStateToProps
 const List = () => {
-  const articles = useSelector((state: any) => state.articlesStore.articles);
+  const articles = useSelector((state: any) => state.articles.articles);
   return (
     <>
       <p>List</p>
@@ -24,7 +24,7 @@ const List = () => {
 
 // mapStateToProps can be replaced by useSelector hook as above
 const mapStateToProps = (state) => {
-  return { articles: state.articlesStore.articles };
+  return { articles: state.articles.articles };
 };
 const mapDispatchToProps = (dispatch) => {
   return { someActionToDispatch: dispatch };

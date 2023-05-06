@@ -33,8 +33,8 @@ const TrainLineAnnoucer = ({ dispatchData, station }) => {
 };
 // use ownProps to have accessto the native props attached
 // to the connect component
-const mapStateToProps = (state,ownProps) => {
-  return { station: state.trainsStore.station };
+const mapStateToProps = (state, ownProps) => {
+  return { station: state.trains.station };
 };
 const mapDispatchToProps = (dispatch) => {
   return {

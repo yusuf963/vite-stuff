@@ -59,9 +59,9 @@ const Footer = ({ courses, cart, country, addToFav, removeFromFav }) => {
 };
 const mapStateToProps = (state) => {
   return {
-    courses: state.couresesStore.courses,
-    cart: state.cartStore,
-    country: state.countryStore,
+    courses: state.coureses.courses,
+    cart: state.cart,
+    country: state.country,
   };
 };
 const mapDispatchToProps = (

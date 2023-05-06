@@ -10,7 +10,7 @@ const TrainLine = ({ station }) => {
 };
 function mapStateToProps(state) {
   return {
-    station: state.trainsStore.station,
+    station: state.trains.station,
   };
 }
 

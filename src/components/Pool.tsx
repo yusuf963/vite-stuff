@@ -25,7 +25,7 @@ const Pool = ({ articles, dispatchDeleteArticle }) => {
 // what part of the Redux global state does our component want to receive as props?
 // in this case, we want the count
 const mapStateToProps = (state) => {
-  return { articles: state.articlesStore.articles, count: state.articlesStore.count };
+  return { articles: state.articles.articles, count: state.articles.count };
 };
 const mapDispatchToProps = (dispatch) => {
   return {

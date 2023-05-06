@@ -1,7 +1,7 @@
 import { CART_INITIAL_STATE } from "./state";
 import { CART_ACTIONS } from "./action";
 
-export const cartReducer = (state = CART_INITIAL_STATE, action) => {
+export const cartReducer = (state = CART_INITIAL_STATE, action: any) => {
   if (action.type === CART_ACTIONS.INCREASE_CART_ITEM) {
     if (state.cartItems.find((item) => item.id === action.payload)) {
       state.cartItems.map((item) => {
@@ -19,11 +19,7 @@ export const cartReducer = (state = CART_INITIAL_STATE, action) => {
     return state;
   }
   if (action.type === CART_ACTIONS.DECREASE_CART_ITEM) {
-    console.log("DECREASE_CART_ITEM", action.payload);
-
     if (state.cartItems.find((item) => item.id === action.payload)) {
-      console.log("DECREASE_CART_ITEM2", action.payload);
-
       state.cartItems.map((item) => {
         if (item.id === action.payload) {
           item.quantity--;
@@ -42,8 +38,6 @@ export const cartReducer = (state = CART_INITIAL_STATE, action) => {
     return state;
   }
   if (action.type === CART_ACTIONS.ADD_TO_CART) {
-    console.log("ADD_TO_CART", action.payload);
-
     if (state.cartItems.find((item) => item.id === action.payload.id))
       return state;
     const newCart = {
