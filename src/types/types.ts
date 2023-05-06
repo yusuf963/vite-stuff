@@ -14,8 +14,6 @@ type ItemType = {
   src?: string;
 };
 
-
-
 export type CoursesType = {
   courses: ItemType[];
   count: number;
@@ -25,3 +23,19 @@ export type VideoType = {
   videos: ItemType[];
   count: number;
 };
+export type NativeDomEvent = {
+  target: {
+    id: string;
+  };
+  preventDefault: () => void;
+};
+
+// export type globalStatye = {
+//   courses: CoursesType;
+//   videos: VideoType;
+//   articles: ArticlesType;
+//   country: CountryType;
+//   trains: TrainType;
+//   match: MatchType;
+//   cart: CartType;
+// };

@@ -11,7 +11,9 @@
     "mtest": "mocha",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=31fc63d5c563"
+    "chromatic": "npx chromatic --project-token=31fc63d5c563",
+    "cypress:open": "npx cypress open",
+    "cypress:firefox": "npx cypress run --browser firefox --config viewportWidth=1280,viewportHeight=720"
   },
   "dependencies": {
     "classnames": "^2.3.2",

@@ -7,6 +7,7 @@ import { useLocalStorage } from "./hooks/useLocalStorage";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 
+import Article from "./components/articles";
 import Footer from "./components/Footer";
 import List from "./components/List";
 import Pool from "./components/Pool";
@@ -35,7 +36,9 @@ function App() {
       <Provider store={store}>
         <PersistGate persistor={persistor}>
           <Section children={someChildrent} name={"some name "}></Section>
+          <Article />
           <ShopingCart />
+          <Product />
           <MatchControl />
           <MatchDisplay />
           <Form />
@@ -74,7 +77,6 @@ function App() {
           <TrainLine />
           <Footer />
           <Country />
-          <Product />
         </PersistGate>
       </Provider>
     </div>
