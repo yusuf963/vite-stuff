@@ -1,4 +1,4 @@
-import { CART_ACTIONS } from "../../types";
+import { CART_ACTIONS } from '../../types';
 
 export const addtoCartAction = (payload) => {
   return { type: CART_ACTIONS.ADD_TO_CART, payload };

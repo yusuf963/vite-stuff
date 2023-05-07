@@ -1,4 +1,4 @@
-import { CART_ACTIONS, CART_INITIAL_STATE } from "../../types";
+import { CART_ACTIONS, CART_INITIAL_STATE } from '../../types';
 
 export const cartReducer = (state = CART_INITIAL_STATE, action: any) => {
   if (action.type === CART_ACTIONS.INCREASE_CART_ITEM) {
@@ -11,7 +11,7 @@ export const cartReducer = (state = CART_INITIAL_STATE, action: any) => {
 
       const newCart = {
         ...state,
-        cartItems: [...state.cartItems],
+        cartItems: [...state.cartItems]
       };
       return newCart;
     }
@@ -30,7 +30,7 @@ export const cartReducer = (state = CART_INITIAL_STATE, action: any) => {
 
       const newCart = {
         ...state,
-        cartItems: [...state.cartItems],
+        cartItems: [...state.cartItems]
       };
       return newCart;
     }
@@ -41,14 +41,14 @@ export const cartReducer = (state = CART_INITIAL_STATE, action: any) => {
       return state;
     const newCart = {
       ...state,
-      cartItems: [...state.cartItems, action.payload],
+      cartItems: [...state.cartItems, action.payload]
     };
     return newCart;
   }
   if (action.type === CART_ACTIONS.REMOVE_FROM_CART) {
     const newCart = {
       ...state,
-      cartItems: state.cartItems.filter((item) => item.id !== action.payload),
+      cartItems: state.cartItems.filter((item) => item.id !== action.payload)
     };
     return newCart;
   }

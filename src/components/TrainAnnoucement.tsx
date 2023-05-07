@@ -1,11 +1,11 @@
-import { useState } from "react";
-import { connect } from "react-redux";
-import { announceTrainAction } from "../store/train/action";
-import propTypes from "prop-types";
-import { bindActionCreators } from "redux";
+import { useState } from 'react';
+import { connect } from 'react-redux';
+import { announceTrainAction } from '../store/train/action';
+import propTypes from 'prop-types';
+import { bindActionCreators } from 'redux';
 
 const TrainLineAnnoucer = ({ dispatchData, station }) => {
-  const [annoucement, setAnnouement] = useState("");
+  const [annoucement, setAnnouement] = useState('');
   const handleChange = (event) => {
     const value = event.target.value;
     setAnnouement(value);
@@ -14,7 +14,7 @@ const TrainLineAnnoucer = ({ dispatchData, station }) => {
   const handleSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault();
     dispatchData(annoucement);
-    setAnnouement("");
+    setAnnouement('');
   };
   return (
     <div>
@@ -38,7 +38,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    dispatchData: (annoucement) => dispatch(announceTrainAction(annoucement)),
+    dispatchData: (annoucement) => dispatch(announceTrainAction(annoucement))
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(TrainLineAnnoucer);

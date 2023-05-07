@@ -1,8 +1,8 @@
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 import {
   addCountryToFavAction,
-  removeCountryFromFavAction,
-} from "../store/country/action";
+  removeCountryFromFavAction
+} from '../store/country/action';
 
 const Footer = ({ courses, cart, country, addToFav, removeFromFav }) => {
   const firstFive = country.country && country.country.slice(0, 5);
@@ -61,7 +61,7 @@ const mapStateToProps = (state) => {
   return {
     courses: state.coureses.courses,
     cart: state.cart,
-    country: state.country,
+    country: state.country
   };
 };
 const mapDispatchToProps = (
@@ -71,7 +71,7 @@ const mapDispatchToProps = (
     addToFav: (selectedCountry) =>
       dispatch(addCountryToFavAction(selectedCountry)),
     removeFromFav: (countryToRemove) =>
-      dispatch(removeCountryFromFavAction(countryToRemove)),
+      dispatch(removeCountryFromFavAction(countryToRemove))
   };
 };
 

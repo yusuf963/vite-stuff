@@ -1,41 +1,41 @@
-import React, { Suspense, useState } from "react";
-import { PersistGate } from "redux-persist/integration/react";
-import { Provider } from "react-redux";
-import { store, persistor } from "./store/rootReducer";
-import { useLocalStorage } from "./hooks/useLocalStorage";
+import React, { Suspense, useState } from 'react';
+import { PersistGate } from 'redux-persist/integration/react';
+import { Provider } from 'react-redux';
+import { store, persistor } from './store/rootReducer';
+import { useLocalStorage } from './hooks/useLocalStorage';
 
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
 
-import Article from "./components/articles";
-import Footer from "./components/Footer";
-import List from "./components/List";
-import Pool from "./components/Pool";
-import Video from "./components/Video";
-import Form from "./components/Form";
-import TrainLine from "./components/TrainLine";
-import TrainLineAnnoucer from "./components/TrainAnnoucement";
-import MatchControl from "./components/MatchControl";
-import MatchDisplay from "./components/MatchDisplay";
-import Country from "./components/Country";
-import Product from "./components/Product";
-import "./styles/App.css";
-import ShopingCart from "./components/ShopingCart";
-import Section from "./layouts/Section";
+import Article from './components/articles';
+import Footer from './components/Footer';
+import List from './components/List';
+import Pool from './components/Pool';
+import Video from './components/Video';
+import Form from './components/Form';
+import TrainLine from './components/TrainLine';
+import TrainLineAnnoucer from './components/TrainAnnoucement';
+import MatchControl from './components/MatchControl';
+import MatchDisplay from './components/MatchDisplay';
+import Country from './components/Country';
+import Product from './components/Product';
+import './styles/App.css';
+import ShopingCart from './components/ShopingCart';
+import Section from './layouts/Section';
 
-const Nav = React.lazy(() => import("./components/Nav"));
+const Nav = React.lazy(() => import('./components/Nav'));
 
 function App() {
   const [count, setCount] = useState(0);
 
   const someChildrent = <h3>hello I am a children prop</h3>;
-  const data = useLocalStorage("persist:root");
+  const data = useLocalStorage('persist:root');
 
   return (
     <div className="App">
       <Provider store={store}>
         <PersistGate persistor={persistor}>
-          <Section children={someChildrent} name={"some name "}></Section>
+          <Section children={someChildrent} name={'some name '}></Section>
           <Article />
           <ShopingCart />
           <Product />

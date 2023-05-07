@@ -1,4 +1,4 @@
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 
 const MatchDisplay = ({ match }) => {
   return (
@@ -17,7 +17,7 @@ const MatchDisplay = ({ match }) => {
           <p>
             {match.teamOneScore !== match.teamTwoScore
               ? `Winner: ${match.winner()}`
-              : "Match Draw"}
+              : 'Match Draw'}
           </p>
         </div>
       )}
@@ -28,7 +28,7 @@ const MatchDisplay = ({ match }) => {
 
 const mapStateToProps = (state) => {
   return {
-    match: state.match,
+    match: state.match
   };
 };
 

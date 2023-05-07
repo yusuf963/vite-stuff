@@ -19,4 +19,3 @@ export type HTMLImageEvent = React.MouseEvent<HTMLImageElement>;
 export type HTMLDivElement = React.MouseEvent<HTMLDivElement>;
 export type HTMLSpanElement = React.MouseEvent<HTMLSpanElement>;
 export type HTMLUListElement = React.MouseEvent<HTMLUListElement>;
-

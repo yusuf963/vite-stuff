@@ -1,34 +1,34 @@
-import { useState } from "react";
-import { connect } from "react-redux";
+import { useState } from 'react';
+import { connect } from 'react-redux';
 import {
   setMatchAction,
   updateScoreAction,
   endMatchAction,
-  startMatchAction,
-} from "../store/match/action";
+  startMatchAction
+} from '../store/match/action';
 const MatchControl = ({
   setMatch,
   matchStarted,
   updateScore,
   matchEnded,
-  match,
+  match
 }) => {
   const [matchStart, setMatchStart] = useState(false);
   const [matchEnd, setMatchEnd] = useState(false);
   const [teamsName, setTeamsName] = useState({
-    teamOne: "",
-    teamTwo: "",
+    teamOne: '',
+    teamTwo: ''
   });
   const [teamsScore, setTeamsScore] = useState({
     teamOneScore: 0,
-    teamTwoScore: 0,
+    teamTwoScore: 0
   });
 
   const handleSubmit = (event) => {
     event.preventDefault();
     setMatch({
       teamOne: teamsName.teamOne,
-      teamTwo: teamsName.teamTwo,
+      teamTwo: teamsName.teamTwo
     });
     matchStarted(matchStart);
     updateScore(teamsScore);
@@ -103,7 +103,7 @@ const MatchControl = ({
 
 const mapStateToProps = (state) => {
   return {
-    match: state.match,
+    match: state.match
   };
 };
 
@@ -112,7 +112,7 @@ const mapDispatchToProps = (dispatch) => {
     setMatch: (match) => dispatch(setMatchAction(match)),
     matchStarted: (isStarted) => dispatch(startMatchAction(isStarted)),
     updateScore: (score) => dispatch(updateScoreAction(score)),
-    matchEnded: (isEnded) => dispatch(endMatchAction(isEnded)),
+    matchEnded: (isEnded) => dispatch(endMatchAction(isEnded))
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(MatchControl);

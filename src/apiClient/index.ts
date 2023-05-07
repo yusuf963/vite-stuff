@@ -1,12 +1,12 @@
 const headerOption = {
-  method: "GET",
+  method: 'GET',
   headers: {
-    "Content-Type": "application/json",
-  },
+    'Content-Type': 'application/json'
+  }
 };
 const newHeaderOption = {
   ...headerOption,
-  method: "POST",
+  method: 'POST'
 };
 
 export const fetchClient = async (url: string, options = headerOption) => {

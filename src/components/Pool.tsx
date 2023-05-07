@@ -1,5 +1,5 @@
-import { connect } from "react-redux";
-import { deleteArticleAction } from "../store/article/action";
+import { connect } from 'react-redux';
+import { deleteArticleAction } from '../store/article/action';
 
 const Pool = ({ articles, dispatchDeleteArticle }) => {
   const handleDelete = (id) => {
@@ -29,7 +29,7 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    dispatchDeleteArticle: (article) => dispatch(deleteArticleAction(article)),
+    dispatchDeleteArticle: (article) => dispatch(deleteArticleAction(article))
   };
 };
 

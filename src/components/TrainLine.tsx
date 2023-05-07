@@ -1,4 +1,4 @@
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 
 const TrainLine = ({ station }) => {
   return (
@@ -10,7 +10,7 @@ const TrainLine = ({ station }) => {
 };
 function mapStateToProps(state) {
   return {
-    station: state.trains.station,
+    station: state.trains.station
   };
 }
 

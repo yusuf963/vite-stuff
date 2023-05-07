@@ -1,4 +1,4 @@
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 type VideoType = {
   id: number;
   title: string;
@@ -16,7 +16,7 @@ const Video = ({ state }) => {
         {state.videos.map((el: VideoType) => {
           return (
             <div key={el.id}>
-              {" "}
+              {' '}
               <h3>{el.title}</h3>
               <video width="320" height="240" controls src={el.src} />
             </div>

@@ -1,59 +1,59 @@
-import { connect } from "react-redux";
-import { useState } from "react";
-import { getArticles, selectArticles } from "../../store/article/selector";
+import { connect } from 'react-redux';
+import { useState } from 'react';
+import { getArticles, selectArticles } from '../../store/article/selector';
 
 const Article = ({ ...props }) => {
   const [data, setData] = useState({
-    title: "",
-    description: "",
+    title: '',
+    description: ''
   });
-  console.log("props my another select", props.myAnotherSelect);
+  console.log('props my another select', props.myAnotherSelect);
 
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
 
   const handleUpdate = (e) => {
-    console.log("handleUpdate", e.target.id);
+    console.log('handleUpdate', e.target.id);
 
     e.preventDefault();
 
     props.dispatch({
-      type: "UPDATE_ARTICLE",
+      type: 'UPDATE_ARTICLE',
       payload: {
         id: 1,
-        title: "updated title",
-        description: "updated description",
-      },
+        title: 'updated title',
+        description: 'updated description'
+      }
     });
   };
 
   const handleDelete = (e) => {
-    console.log("handleDelete", e.target.id);
+    console.log('handleDelete', e.target.id);
 
     e.preventDefault();
     props.dispatch({
-      type: "DELETE_ARTICLE",
+      type: 'DELETE_ARTICLE',
       payload: {
-        id: 1,
-      },
+        id: 1
+      }
     });
   };
 
   const handleCreateArticle = (e) => {
     e.preventDefault();
     props.dispatch({
-      type: "CREATE_ARTICLE",
+      type: 'CREATE_ARTICLE',
       payload: {
         id: 32,
         title: data.title,
-        description: data.description,
-      },
+        description: data.description
+      }
     });
 
     setData({
-      title: "",
-      description: "",
+      title: '',
+      description: ''
     });
   };
   return (
@@ -76,7 +76,7 @@ const Article = ({ ...props }) => {
           Submit
         </button>
       </form>
-      <h3 id={"w"} onClick={handleDelete}>
+      <h3 id={'w'} onClick={handleDelete}>
         Number of article is
       </h3>
       {props.articles.articles.map((article) => (
@@ -102,7 +102,7 @@ const mapStateToProp = (state: any) => {
     mySelect: getArticles(state),
     myAnotherSelect: selectArticles(state),
     articles: state.articles,
-    cart: state.cart,
+    cart: state.cart
   };
 };
 

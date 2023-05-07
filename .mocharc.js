@@ -1,7 +1,7 @@
-"use strict";
+'use strict';
 module.exports = {
   recursive: true,
-  require: ["test/setup.js"],
+  require: ['test/setup.js'],
   timeout: 4000,
-  exit: true,
+  exit: true
 };

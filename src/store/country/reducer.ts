@@ -1,10 +1,10 @@
-import { countryActionTypes, initialCountryState } from "../../types";
+import { countryActionTypes, initialCountryState } from '../../types';
 
 export const countryReducer = (state = initialCountryState, action) => {
   if (action.type === countryActionTypes.FETCH_COUNTRY_START) {
     const newState = {
       ...state,
-      isLoading: true,
+      isLoading: true
     };
     return newState;
   }
@@ -13,7 +13,7 @@ export const countryReducer = (state = initialCountryState, action) => {
       ...state,
       country: action.payload,
       isLoading: false,
-      success: true,
+      success: true
     };
 
     return newState;
@@ -23,7 +23,7 @@ export const countryReducer = (state = initialCountryState, action) => {
       ...state,
       error: action.payload,
       isLoading: false,
-      success: false,
+      success: false
     };
     return newState;
   }
@@ -34,7 +34,7 @@ export const countryReducer = (state = initialCountryState, action) => {
     if (!itemAlreadyInFav) {
       const newState = {
         ...state,
-        favourite: [...state.favourite, action.payload],
+        favourite: [...state.favourite, action.payload]
       };
       return newState;
     }
@@ -44,7 +44,7 @@ export const countryReducer = (state = initialCountryState, action) => {
       ...state,
       favourite: state.favourite.filter(
         (item) => item.name.official !== action.payload.name.official
-      ),
+      )
     };
     return newState;
   }

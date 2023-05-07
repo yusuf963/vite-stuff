@@ -1,4 +1,4 @@
-import { connect, useSelector } from "react-redux";
+import { connect, useSelector } from 'react-redux';
 
 // you can also useSelector hook to get the state from redux store
 // instead of using mapStateToProps

@@ -1,5 +1,5 @@
-import { createSelector } from "reselect";
-import { STORESTATE } from "../../types";
+import { createSelector } from 'reselect';
+import { STORESTATE } from '../../types';
 
 export const cartSelector = (state: any) => state.cart;
 

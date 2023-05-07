@@ -6,7 +6,7 @@
       "~/test/*": ["./test/*"]
     },
 
-    "target": "ESNext",
+    "target": "ES2016",
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": false,
