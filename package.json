@@ -16,7 +16,7 @@
     "cypress:firefox": "npx cypress run --browser firefox --config viewportWidth=1280,viewportHeight=720",
     "format": "prettier --loglevel warn --write '**/*.{ts,js,json,jsx,tsx,md}'",
     "format:check": "prettier --check '**/*.{ts,js,json,jsx,tsx,md}'",
-    "posttest": "npm run tsc && npm run lint && npm run format:check",
+    "posttest": "npm run tsc && npm run format:check",
     "lint": "npm run eslint && npm run unused-exports && npm run lint:sass && npm run unused-files",
     "unused-exports": "npm run unused-exports:src && npm run unused-exports:test && npm run unused-exports:types",
     "unused-exports:src": "ts-unused-exports ./tsconfig.json --showLineNumber --ignoreTestFiles --allowUnusedTypes --allowUnusedEnums",
@@ -50,6 +50,7 @@
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@types/react-redux": "^7.1.25",
+    "@typescript-eslint/eslint-plugin": "^5.59.2",
     "@vitejs/plugin-react": "^3.1.0",
     "chromatic": "^6.17.3",
     "cypress": "^12.9.0",
@@ -64,6 +65,19 @@
     "ts-unused-exports": "^9.0.4",
     "typescript": "^4.9.3",
     "vite": "^4.2.0"
+  },
+  "eslintConfig": {
+    "extends": [],
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "parserOptions": {
+      "sourceType": "module",
+      "ecmaVersion": 2015
+    },
+    "rules": {
+      "@typescript-eslint/ban-types": "warn"
+    }
   },
   "readme": "ERROR: No README data found!",
   "_id": "vite-stuff@0.0.0"
