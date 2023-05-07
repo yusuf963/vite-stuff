@@ -1,22 +1,4 @@
-import { matchActionType } from "./action";
-
-const matchInitailState = {
-  teamOne: "",
-  teamTwo: "",
-  teamOneScore: 0,
-  teamTwoScore: 0,
-  isMatchStarted: false,
-  isMatchEnded: false,
-  winner: function () {
-    if (this.teamOneScore > this.teamTwoScore) {
-      return this.teamOne;
-    } else if (this.teamOneScore < this.teamTwoScore) {
-      return this.teamTwo;
-    } else {
-      return "Draw";
-    }
-  },
-};
+import { matchActionType, matchInitailState } from "../../types";
 
 export const matchReducer = (state = matchInitailState, action) => {
   if (action.type === matchActionType.SET_MATCH) {

@@ -6,7 +6,7 @@ import {
   fetchCountrySucessAction,
   fetchCountryAsnc,
 } from "../store/country/action";
-import { selectCountryIsLoading } from "../store/country/selector";
+// import { selectFavouriteCountry } from "../store/country/selector";
 
 const Country = ({ childern, ...props }) => {
   const { isFoucs } = props;
@@ -25,7 +25,7 @@ const Country = ({ childern, ...props }) => {
     { anotherStyle: true },
     { "some-style": isActive }
   );
-  const isLoading = useSelector(selectCountryIsLoading);
+  // const isLoading = useSelector(selectFavouriteCountry);
   const dispatch = useDispatch();
   useEffect(() => {
     // instead of using fetchCountrySucessAction we can use fetch usign thunk async middleware
@@ -39,7 +39,7 @@ const Country = ({ childern, ...props }) => {
   return (
     <div className={countryClasses}>
       <h1>Country</h1>
-      {isLoading ? <p>Loading...</p> : <p>Not Loading</p>}
+      {/* {isLoading ? <p>Loading...</p> : <p>Not Loading</p>} */}
     </div>
   );
 };

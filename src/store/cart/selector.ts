@@ -1,12 +1,9 @@
 import { createSelector } from "reselect";
-
-type stateStore = {
-  [key: string]: any;
-};
+import { STORESTATE } from "../../types";
 
 export const cartSelector = (state: any) => state.cart;
 
-export const cartItemsSelector = createSelector<stateStore, any, any>(
+export const cartItemsSelector = createSelector<STORESTATE, any, any>(
   [cartSelector],
   (cart) => cart.cartItems
 );

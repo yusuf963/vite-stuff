@@ -1,14 +1,13 @@
 import { connect } from "react-redux";
-import { NativeDomEvent } from "../../types";
 import { useState } from "react";
+import { getArticles, selectArticles } from "../../store/article/selector";
 
 const Article = ({ ...props }) => {
   const [data, setData] = useState({
     title: "",
     description: "",
   });
-  console.log("props.articles", props.articles);
-  console.log("props.cart", props.cart);
+  console.log("props my another select", props.myAnotherSelect);
 
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
@@ -86,6 +85,12 @@ const Article = ({ ...props }) => {
           <p id={article.id} onClick={handleUpdate}>
             Description: {article.description}
           </p>
+          {props.myAnotherSelect && (
+            <p>
+              there i only one article in the store and there is no country in
+              Fav
+            </p>
+          )}
         </div>
       ))}
     </div>
@@ -94,6 +99,8 @@ const Article = ({ ...props }) => {
 
 const mapStateToProp = (state: any) => {
   return {
+    mySelect: getArticles(state),
+    myAnotherSelect: selectArticles(state),
     articles: state.articles,
     cart: state.cart,
   };

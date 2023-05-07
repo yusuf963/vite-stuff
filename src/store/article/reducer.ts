@@ -1,14 +1,14 @@
 import {
   ArticleAction,
-  articalActionType,
+  ArticalDispatchActionType,
   articlesInitialState,
-} from "../../types/article";
+} from "../../types";
 
 export function articlesReducer(
   state = articlesInitialState,
   action: ArticleAction
 ) {
-  if (action.type === articalActionType.CREATE_ARTICLE) {
+  if (action.type === ArticalDispatchActionType.CREATE_ARTICLE) {
     const newCount = state.count + 1;
     return {
       articles: [...state.articles, action.payload],
@@ -16,7 +16,7 @@ export function articlesReducer(
     };
   }
 
-  if (action.type === articalActionType.UPDATE_ARTICLE) {
+  if (action.type === ArticalDispatchActionType.UPDATE_ARTICLE) {
     const articleId = action.payload.id;
     const newArticles = state.articles.map((article) => {
       if (article.id === articleId) {
@@ -30,7 +30,7 @@ export function articlesReducer(
     };
   }
 
-  if (action.type === articalActionType.DELETE_ARTICLE) {
+  if (action.type === ArticalDispatchActionType.DELETE_ARTICLE) {
     const articleId = action.payload.id;
     if (state.count === 0) {
       return state;

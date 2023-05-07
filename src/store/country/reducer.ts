@@ -1,20 +1,5 @@
-import { countryActionTypes } from "./action";
+import { countryActionTypes, initialCountryState } from "../../types";
 
-type State = {
-  country: any[];
-  favourite: any[];
-  isLoading: null | boolean;
-  error: null;
-  success: null;
-};
-
-const initialCountryState: State = {
-  country: [],
-  favourite: [],
-  isLoading: null,
-  success: null,
-  error: null,
-};
 export const countryReducer = (state = initialCountryState, action) => {
   if (action.type === countryActionTypes.FETCH_COUNTRY_START) {
     const newState = {

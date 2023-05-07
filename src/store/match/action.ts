@@ -1,10 +1,4 @@
-export const matchActionType = {
-  SET_MATCH: "SET_MATCH",
-  START_MATCH: "START_MATCH",
-  UPDATE_SCORE: "UPDATE_SCORE",
-  END_MATCH: "END_MATCH",
-};
-
+import { matchActionType } from "../../types";
 export function setMatchAction(payload) {
   return { type: matchActionType.SET_MATCH, payload };
 }

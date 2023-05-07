@@ -1,7 +1,4 @@
-const trainInitailState = {
-  station: "Old Street",
-};
-
+import { trainInitailState } from "../../types";
 
 export const trainReducer = (state = trainInitailState, action: any) => {
   if (action.type === "WHERE_IS_THE_TRAIN_NOW") {

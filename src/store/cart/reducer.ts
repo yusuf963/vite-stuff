@@ -1,5 +1,4 @@
-import { CART_INITIAL_STATE } from "./state";
-import { CART_ACTIONS } from "./action";
+import { CART_ACTIONS, CART_INITIAL_STATE } from "../../types";
 
 export const cartReducer = (state = CART_INITIAL_STATE, action: any) => {
   if (action.type === CART_ACTIONS.INCREASE_CART_ITEM) {
