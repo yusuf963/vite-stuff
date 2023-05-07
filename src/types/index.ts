@@ -1,3 +1,4 @@
+import { ArticlesType } from "./article";
 export type ActionType = {
   type: string;
   payload: {
@@ -30,12 +31,12 @@ export type NativeDomEvent = {
   preventDefault: () => void;
 };
 
-// export type globalStatye = {
-//   courses: CoursesType;
-//   videos: VideoType;
-//   articles: ArticlesType;
-//   country: CountryType;
-//   trains: TrainType;
-//   match: MatchType;
-//   cart: CartType;
-// };
+export type globalStatye = {
+  courses: CoursesType;
+  videos: VideoType;
+  articles: ArticlesType;
+  // country: CountryType;
+  // trains: TrainType;
+  // match: MatchType;
+  // cart: CartType;
+};

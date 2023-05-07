@@ -1,36 +1,14 @@
-type ItemType = {
-  title: string;
-  description: string;
-  id: number;
-  src?: string;
-};
-
-type ArticlesType = {
-  articles: ItemType[];
-  count: number;
-};
-
-type ActionType = {
-  type: string;
-  payload: ItemType;
-};
-
-const articlesInitialState: ArticlesType = {
-  articles: [
-    {
-      title: "Article 1",
-      description: "Description 1",
-      id: 1,
-    },
-  ],
-  count: 1,
-};
+import {
+  ArticleAction,
+  articalActionType,
+  articlesInitialState,
+} from "../../types/article";
 
 export function articlesReducer(
   state = articlesInitialState,
-  action: ActionType
+  action: ArticleAction
 ) {
-  if (action.type === "CREATE_ARTICLE") {
+  if (action.type === articalActionType.CREATE_ARTICLE) {
     const newCount = state.count + 1;
     return {
       articles: [...state.articles, action.payload],
@@ -38,7 +16,7 @@ export function articlesReducer(
     };
   }
 
-  if (action.type === "UPDATE_ARTICLE") {
+  if (action.type === articalActionType.UPDATE_ARTICLE) {
     const articleId = action.payload.id;
     const newArticles = state.articles.map((article) => {
       if (article.id === articleId) {
@@ -52,7 +30,7 @@ export function articlesReducer(
     };
   }
 
-  if (action.type === "DELETE_ARTICLE") {
+  if (action.type === articalActionType.DELETE_ARTICLE) {
     const articleId = action.payload.id;
     if (state.count === 0) {
       return state;

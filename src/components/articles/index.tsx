@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { NativeDomEvent } from "../../types/types";
+import { NativeDomEvent } from "../../types";
 import { useState } from "react";
 
 const Article = ({ ...props }) => {
