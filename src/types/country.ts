@@ -6,7 +6,7 @@ export const countryActionTypes = {
   ADD_TO_FAV: "ADD_TO_FAV",
 };
 
-type State = {
+export type CountryStateType = {
   country: any[];
   favourite: any[];
   isLoading: null | boolean;
@@ -14,7 +14,7 @@ type State = {
   success: null;
 };
 
-export const initialCountryState: State = {
+export const initialCountryState: CountryStateType = {
   country: [],
   favourite: [],
   isLoading: null,

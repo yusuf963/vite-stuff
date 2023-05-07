@@ -16,9 +16,15 @@ export type Item = {
   dexcription?: string;
 };
 
-export const CART_INITIAL_STATE = {
+export const CART_INITIAL_STATE: CartStateType = {
   isCartOpen: false,
-  cartItems: [] as Item[],
+  cartItems: [],
   cartTotal: 0,
   cartCount: 0,
+};
+export type CartStateType = {
+  isCartOpen: boolean;
+  cartItems: Item[];
+  cartTotal: number;
+  cartCount: number;
 };

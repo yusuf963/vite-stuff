@@ -20,7 +20,7 @@ export const fetchCountryFailureAction = (payload) => {
   };
 };
 
-export const fetchCountryAsnc = () => async (dispatch) => {
+export const fetchCountryAsync = () => async (dispatch) => {
   dispatch(fetchCountryActionStart());
   try {
     const response = await fetch("https://restcountries.com/v3.1/all");

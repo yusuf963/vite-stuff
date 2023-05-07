@@ -1,11 +1,19 @@
-import { CoursesType, ArticlesSliceType, VideosType } from "./index";
+import {
+  CoursesType,
+  ArticlesSliceType,
+  VideosType,
+  CountryStateType,
+  TrainStateType,
+  MatchStateType,
+  CartStateType,
+} from "./index";
 
 export interface STORESTATE {
   courses: CoursesType;
   videos: VideosType;
   articles: ArticlesSliceType;
-  country: CountryType;
-  trains: TrainType;
-  match: MatchType;
-  cart: CartType;
+  country: CountryStateType;
+  trains: TrainStateType;
+  match: MatchStateType;
+  cart: CartStateType;
 }

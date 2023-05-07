@@ -4,9 +4,9 @@ import { useSelector } from "react-redux";
 import classNames from "classnames";
 import {
   fetchCountrySucessAction,
-  fetchCountryAsnc,
+  fetchCountryAsync,
 } from "../store/country/action";
-// import { selectFavouriteCountry } from "../store/country/selector";
+import { selectFavouriteCountry } from "../store/country/selector";
 
 const Country = ({ childern, ...props }) => {
   const { isFoucs } = props;
@@ -25,7 +25,7 @@ const Country = ({ childern, ...props }) => {
     { anotherStyle: true },
     { "some-style": isActive }
   );
-  // const isLoading = useSelector(selectFavouriteCountry);
+  const isLoading = useSelector(selectFavouriteCountry);
   const dispatch = useDispatch();
   useEffect(() => {
     // instead of using fetchCountrySucessAction we can use fetch usign thunk async middleware
@@ -34,21 +34,22 @@ const Country = ({ childern, ...props }) => {
         .then((res) => res.json())
         .then((data) => console.log(data));
     };
-    dispatch(fetchCountryAsnc());
+    fetchCountry();
+    // dispatch(fetchCountryAsync());
   }, []);
   return (
     <div className={countryClasses}>
       <h1>Country</h1>
-      {/* {isLoading ? <p>Loading...</p> : <p>Not Loading</p>} */}
+      {isLoading ? <p>Loading...</p> : <p>Not Loading</p>}
     </div>
   );
 };
 
-// const mapDispachToProps = (dispatch) => {
-//   return {
-//     countryData: (data) => {
-//       dispatch(fetchCountrySucessAction(data));
-//     },
-//   };
-// };
+const mapDispachToProps = (dispatch) => {
+  return {
+    countryData: (data) => {
+      dispatch(fetchCountrySucessAction(data));
+    },
+  };
+};
 export default connect(null, null)(Country);
