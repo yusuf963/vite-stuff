@@ -1,5 +1,5 @@
-import { createSelector } from "reselect";
-import { STORESTATE } from "../../types";
+import { createSelector } from 'reselect';
+import { STORESTATE } from '../../types';
 
 const getCountry = (state: any) => state.country;
 
@@ -8,7 +8,7 @@ export const selectFavouriteCountry = createSelector<
   { [key: string]: any },
   []
 >([getCountry], (countrySlice) => {
-  console.log("countrySlice", countrySlice);
+  console.log('countrySlice', countrySlice);
 
   return countrySlice.favourite;
 });

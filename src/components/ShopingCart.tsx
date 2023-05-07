@@ -1,9 +1,9 @@
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 import {
   removeFromCartAction,
   increaseCartItemAction,
-  decreaseCartItemAction,
-} from "../store/cart/action";
+  decreaseCartItemAction
+} from '../store/cart/action';
 
 type Item = {
   id: number;
@@ -61,7 +61,7 @@ const ShopingCart = ({ cart, remove, increaseCartItem, decreaseCartItem }) => {
 
 const mapStateToProp = (state) => {
   return {
-    cart: state.cart.cartItems,
+    cart: state.cart.cartItems
   };
 };
 
@@ -71,7 +71,7 @@ const mapDispatchToProps = (
   return {
     remove: (id: number) => dispatch(removeFromCartAction(id)),
     increaseCartItem: (id: number) => dispatch(increaseCartItemAction(id)),
-    decreaseCartItem: (id: number) => dispatch(decreaseCartItemAction(id)),
+    decreaseCartItem: (id: number) => dispatch(decreaseCartItemAction(id))
   };
 };
 

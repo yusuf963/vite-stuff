@@ -25,15 +25,15 @@ export type ActionType = {
 export const coursesInitailState = {
   courses: [
     {
-      title: "JS course",
-      description: "its js course ",
-      id: 1,
+      title: 'JS course',
+      description: 'its js course ',
+      id: 1
     },
     {
-      title: "Python course",
-      description: "its Python course ",
-      id: 2,
-    },
+      title: 'Python course',
+      description: 'its Python course ',
+      id: 2
+    }
   ],
-  count: 2,
+  count: 2
 };

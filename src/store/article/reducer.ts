@@ -1,8 +1,8 @@
 import {
   ArticleAction,
   ArticalDispatchActionType,
-  articlesInitialState,
-} from "../../types";
+  articlesInitialState
+} from '../../types';
 
 export function articlesReducer(
   state = articlesInitialState,
@@ -12,7 +12,7 @@ export function articlesReducer(
     const newCount = state.count + 1;
     return {
       articles: [...state.articles, action.payload],
-      count: newCount,
+      count: newCount
     };
   }
 
@@ -26,7 +26,7 @@ export function articlesReducer(
     });
     return {
       ...state,
-      articles: newArticles,
+      articles: newArticles
     };
   }
 
@@ -42,7 +42,7 @@ export function articlesReducer(
     return {
       ...state,
       articles: newArticles,
-      count: newCount,
+      count: newCount
     };
   }
 

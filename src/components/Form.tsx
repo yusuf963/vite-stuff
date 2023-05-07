@@ -1,12 +1,12 @@
-import { useState } from "react";
-import { connect } from "react-redux";
-import { addArticleAction } from "../store/article/action";
+import { useState } from 'react';
+import { connect } from 'react-redux';
+import { addArticleAction } from '../store/article/action';
 
 const Form = ({ dispatchData }) => {
   const [article, setArticle] = useState({
-    title: "",
-    description: "",
-    id: Math.floor(Math.random() * 1000),
+    title: '',
+    description: '',
+    id: Math.floor(Math.random() * 1000)
   });
 
   const handleChange = (event) => {
@@ -19,9 +19,9 @@ const Form = ({ dispatchData }) => {
     event.preventDefault();
     dispatchData(article);
     setArticle({
-      title: "",
-      description: "",
-      id: Math.floor(Math.random() * 1000),
+      title: '',
+      description: '',
+      id: Math.floor(Math.random() * 1000)
     });
   };
 
@@ -51,7 +51,7 @@ const Form = ({ dispatchData }) => {
 
 function mapDispatchToProps(dispatch) {
   return {
-    dispatchData: (article) => dispatch(addArticleAction(article)),
+    dispatchData: (article) => dispatch(addArticleAction(article))
   };
 }
 

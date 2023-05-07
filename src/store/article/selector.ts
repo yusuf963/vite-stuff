@@ -1,9 +1,9 @@
-import { createSelector } from "reselect";
+import { createSelector } from 'reselect';
 import {
   selectFavouriteCountry,
-  selectNumberOfCountries,
-} from "../country/selector";
-import { STORESTATE, ArticlesSliceType } from "../../types";
+  selectNumberOfCountries
+} from '../country/selector';
+import { STORESTATE, ArticlesSliceType } from '../../types';
 
 export const getArticles = (state: STORESTATE): ArticlesSliceType =>
   state.articles;

@@ -1,33 +1,33 @@
-import { combineReducers, createStore, applyMiddleware, compose } from "redux";
-import { persistStore, persistReducer } from "redux-persist";
-import storage from "redux-persist/lib/storage";
-import thunk from "redux-thunk";
+import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import thunk from 'redux-thunk';
 // import reduxImmutableStateInvariant from "redux-immutable-state-invariant";
-import logger from "redux-logger";
+import logger from 'redux-logger';
 
-import { createLoggerMiddleware } from "./_middlewares";
-import { articlesReducer } from "./article/reducer";
-import { countryReducer } from "./country/reducer";
-import { courseReducer } from "./course/reducer";
-import { videoReducer } from "./video/reducer";
-import { trainReducer } from "./train/reducer";
-import { matchReducer } from "./match/reducer";
-import { cartReducer } from "./cart/reducer";
+import { createLoggerMiddleware } from './_middlewares';
+import { articlesReducer } from './article/reducer';
+import { countryReducer } from './country/reducer';
+import { courseReducer } from './course/reducer';
+import { videoReducer } from './video/reducer';
+import { trainReducer } from './train/reducer';
+import { matchReducer } from './match/reducer';
+import { cartReducer } from './cart/reducer';
 
 const persistConfig = {
-  key: "root",
+  key: 'root',
   storage,
-  whitelist: ["country", "cart"],
-  blacklist: ["articles"],
+  whitelist: ['country', 'cart'],
+  blacklist: ['articles']
 };
 
 const middlewares = [
-  process.env.NODE_ENV === "development" && createLoggerMiddleware,
-  thunk,
+  process.env.NODE_ENV === 'development' && createLoggerMiddleware,
+  thunk
 ].filter(Boolean);
 
 const customeCompose =
-  (process.env.NODE_ENV !== "production" &&
+  (process.env.NODE_ENV !== 'production' &&
     window &&
     //@ts-expect-error
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
@@ -44,7 +44,7 @@ export const rootReducer = combineReducers({
   videos: videoReducer,
   trains: trainReducer,
   match: matchReducer,
-  cart: cartReducer,
+  cart: cartReducer
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

@@ -5,8 +5,8 @@ import {
   CountryStateType,
   TrainStateType,
   MatchStateType,
-  CartStateType,
-} from "./index";
+  CartStateType
+} from './index';
 
 export interface STORESTATE {
   courses: CoursesType;

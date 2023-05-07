@@ -1,13 +1,13 @@
 export const matchActionType = {
-  SET_MATCH: "SET_MATCH",
-  START_MATCH: "START_MATCH",
-  UPDATE_SCORE: "UPDATE_SCORE",
-  END_MATCH: "END_MATCH",
+  SET_MATCH: 'SET_MATCH',
+  START_MATCH: 'START_MATCH',
+  UPDATE_SCORE: 'UPDATE_SCORE',
+  END_MATCH: 'END_MATCH'
 };
 
 export const matchInitailState: MatchStateType = {
-  teamOne: "",
-  teamTwo: "",
+  teamOne: '',
+  teamTwo: '',
   teamOneScore: 0,
   teamTwoScore: 0,
   isMatchStarted: false,
@@ -18,9 +18,9 @@ export const matchInitailState: MatchStateType = {
     } else if (this.teamOneScore < this.teamTwoScore) {
       return this.teamTwo;
     } else {
-      return "Draw";
+      return 'Draw';
     }
-  },
+  }
 };
 
 export type MatchStateType = {

@@ -1,29 +1,29 @@
-import { countryActionTypes } from "../../types";
+import { countryActionTypes } from '../../types';
 
 export const fetchCountryActionStart = () => {
   return {
-    type: countryActionTypes.FETCH_COUNTRY_START,
+    type: countryActionTypes.FETCH_COUNTRY_START
   };
 };
 
 export const fetchCountrySucessAction = (payload) => {
   return {
     type: countryActionTypes.FETCH_COUNTRY_SUCCESS,
-    payload,
+    payload
   };
 };
 
 export const fetchCountryFailureAction = (payload) => {
   return {
     type: countryActionTypes.FETCH_COUNTRY_FAIL,
-    payload,
+    payload
   };
 };
 
 export const fetchCountryAsync = () => async (dispatch) => {
   dispatch(fetchCountryActionStart());
   try {
-    const response = await fetch("https://restcountries.com/v3.1/all");
+    const response = await fetch('https://restcountries.com/v3.1/all');
     const data = await response.json();
     dispatch(fetchCountrySucessAction(data));
   } catch (error) {

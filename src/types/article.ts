@@ -1,7 +1,7 @@
 export enum ArticalDispatchActionType {
-  CREATE_ARTICLE = "ADD_ARTICLE",
-  UPDATE_ARTICLE = "UPDATE_ARTICLE",
-  DELETE_ARTICLE = "DELETE_ARTICLE",
+  CREATE_ARTICLE = 'ADD_ARTICLE',
+  UPDATE_ARTICLE = 'UPDATE_ARTICLE',
+  DELETE_ARTICLE = 'DELETE_ARTICLE'
 }
 
 export type ArticlesItemType = {
@@ -24,10 +24,10 @@ export type ArticleAction = {
 export const articlesInitialState: ArticlesSliceType = {
   articles: [
     {
-      title: "Article 1",
-      description: "Description 1",
-      id: 1,
-    },
+      title: 'Article 1',
+      description: 'Description 1',
+      id: 1
+    }
   ],
-  count: 1,
+  count: 1
 };

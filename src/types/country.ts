@@ -1,9 +1,9 @@
 export const countryActionTypes = {
-  FETCH_COUNTRY_START: "FETCH_COUNTRY_START",
-  FETCH_COUNTRY_SUCCESS: "FETCH_COUNTRY_SUCCESS",
-  FETCH_COUNTRY_FAIL: "FETCH_COUNTRY_FAIL",
-  REMOVE_FROM_FAV: "REMOVE_FROM_FAV",
-  ADD_TO_FAV: "ADD_TO_FAV",
+  FETCH_COUNTRY_START: 'FETCH_COUNTRY_START',
+  FETCH_COUNTRY_SUCCESS: 'FETCH_COUNTRY_SUCCESS',
+  FETCH_COUNTRY_FAIL: 'FETCH_COUNTRY_FAIL',
+  REMOVE_FROM_FAV: 'REMOVE_FROM_FAV',
+  ADD_TO_FAV: 'ADD_TO_FAV'
 };
 
 export type CountryStateType = {
@@ -19,5 +19,5 @@ export const initialCountryState: CountryStateType = {
   favourite: [],
   isLoading: null,
   success: null,
-  error: null,
+  error: null
 };

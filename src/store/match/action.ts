@@ -1,4 +1,4 @@
-import { matchActionType } from "../../types";
+import { matchActionType } from '../../types';
 export function setMatchAction(payload) {
   return { type: matchActionType.SET_MATCH, payload };
 }

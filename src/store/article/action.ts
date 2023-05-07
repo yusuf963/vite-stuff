@@ -1,4 +1,4 @@
-import { ArticalDispatchActionType, ArticlesItemType } from "../../types";
+import { ArticalDispatchActionType, ArticlesItemType } from '../../types';
 
 export function addArticleAction(payload: ArticlesItemType) {
   return { type: ArticalDispatchActionType.CREATE_ARTICLE, payload };
